@@ -98,6 +98,10 @@ body::after{
     transition: 0.3s;
 }
 
+.signup-btn:active{
+    transform: scale(0.95);
+}
+
 .features{
     display: flex;
     justify-content: center;
@@ -120,7 +124,7 @@ body::after{
     transition: 0.3s;
 }
 
-/* login css */
+/* login and signup css */
 .welcome-container{
     display: flex;
     justify-content: center;
@@ -131,6 +135,7 @@ body::after{
 .welcome-card{
     background: rgba(255,255,255,0.05);
     padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     width: 300px;
     text-align: center;
@@ -164,4 +169,25 @@ body::after{
 .signup-link:hover{
     color: #22d3ee;
     text-decoration: underline;
+}
+
+.login{
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-link{
+    text-decoration: none;
+    color: #22d3ee;
+    font-weight: bold;
+    
+}
+
+.login-link:hover{
+    color: #22d3ee;
+    text-decoration: underline;
+}
+
+.welcome-card input:focus{
+    box-shadow: 0 0 10px rgba(34,211,238,0.6);
 }
