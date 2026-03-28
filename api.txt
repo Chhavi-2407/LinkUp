@@ -1,0 +1,7 @@
+(1) Eventbrite API
+
+The Eventbrite API is used to fetch real-time data about events such as hackathons, workshops, seminars, and meetups. It provides important details like event name, date, time, location, description, and registration links. In the LinkUp application, this API will serve as the main source for displaying upcoming events based on user search queries. When a user searches for a keyword like “AI” or “hackathon,” the application sends a request to the Eventbrite API and dynamically displays relevant results. This API requires an API key and may sometimes return incomplete data, so proper handling of missing fields is necessary.
+
+(2) Remotive API
+
+The Remotive API is used to fetch remote job and internship opportunities. It provides clean and structured data including job title, company name, category, job type, and application links. In the LinkUp application, this API will be used to show internship and job opportunities alongside events, making the platform more useful for students. It is a free API and does not require authentication, which makes it easy to integrate. Users can search for roles like “frontend developer” or “internship,” and the application will display relevant opportunities in real time.
