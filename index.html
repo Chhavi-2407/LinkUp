@@ -9,6 +9,7 @@
 <body>
     <header class="navbar">
         <h2>LinkUp</h2>
+        <button id="toggleTheme">🌙</button>
         <a href="login.html" class="login-btn">Login</a>
     </header>
 
@@ -24,7 +25,7 @@
     <section class="features">
         <div class="feature-card">
             <h3>⚡️ Fast Search</h3>
-            <p>Fimd events instantly with smart filters</p>
+            <p>Find events instantly with smart filters</p>
         </div>
         <div class="feature-card">
             <h3>❤️ Save Favorites</h3>
@@ -35,5 +36,19 @@
             <p>Never miss deadlines again</p>
         </div>
     </section>
+    <script>
+        const savedTheme = localStorage.getItem("theme");
+        if(savedTheme === "true"){
+            document.body.classList.add("light-mode")
+        }
+        const toggleBtn = document.getElementById("toggleTheme");
+        if(toggleBtn){
+            toggleBtn.addEventListener("click",()=>{
+                document.body.classList.toggle("light-mode");
+                const isLight = document.body.classList.contains("light-mode");
+                localStorage.setItem("theme", isLight)
+            })
+        }
+    </script>
 </body>
 </html>

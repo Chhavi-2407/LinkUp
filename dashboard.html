@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - LinkUp</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <h2>LinkUp</h2>
+        <div class="nav-right">
+            <button id="toggleTheme">🌙</button>
+            <span id="welcomeUser"></span>
+            <button id="logoutBtn" class="signup-btn">Logout</button>
+        </div>
+    </header>
+
+    <!-- Search bar -->
+     <section class="search-box">
+        <input type="text" id="searchInput" placeholder="Search events or internships...">
+        <button id="searchBtn" class="signup-btn">Search</button>
+     </section>
+
+    <!-- filter -->
+     <section class="filters">
+        <select id="filterType">
+            <option value="all">All</option>
+            <option value="event">Events</option>
+            <option value="job">Internships</option>
+        </select>
+        <select id="sortType">
+            <option value="default">Sort</option>
+            <option value="date">Date</option>
+        </select>
+     </section>
+
+    <section id="results"></section>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

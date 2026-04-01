@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="top-bar">
+        <button id="toggleTheme">🌙</button>
+    </div>
     <div class="welcome-container">
         <div class="welcome-card">
             <h2>Welcome Back</h2>
@@ -21,5 +24,19 @@
         </div>
     </div>
     <script src="js/auth.js"></script>
+    <script>
+        const savedTheme = localStorage.getItem("theme");
+        if(savedTheme === "true"){
+            document.body.classList.add("light-mode")
+        }
+        const toggleBtn = document.getElementById("toggleTheme");
+        if(toggleBtn){
+            toggleBtn.addEventListener("click",()=>{
+                document.body.classList.toggle("light-mode");
+                const isLight = document.body.classList.contains("light-mode");
+                localStorage.setItem("theme", isLight)
+            })
+        }
+    </script>
 </body>
 </html>
