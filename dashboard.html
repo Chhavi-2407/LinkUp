@@ -27,7 +27,7 @@
      <section class="filters">
         <select id="filterType">
             <option value="all">All</option>
-            <option value="event">Events</option>
+            <option value="event">Articles</option>
             <option value="job">Internships</option>
         </select>
         <select id="sortType">
@@ -39,5 +39,25 @@
     <section id="results"></section>
 
     <script src="js/app.js"></script>
+    <script>
+        const savedTheme = localStorage.getItem("theme");
+        if(savedTheme === "true"){
+            document.body.classList.add("dark");
+        }
+        const toggleBtn = document.getElementById("toggleTheme");
+        if(toggleBtn){
+            toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+            toggleBtn.addEventListener("click", () => {
+                document.body.classList.toggle("dark");
+                const isDark = document.body.classList.contains("dark");
+                localStorage.setItem("theme", isDark);
+                toggleBtn.textContent = isDark ? "☀️" : "🌙";
+            });
+        }
+        const currentUser = localStorage.getItem("currentUser");
+        if(!currentUser){
+            window.location.href = "index.html";
+        }
+    </script>
 </body>
 </html>

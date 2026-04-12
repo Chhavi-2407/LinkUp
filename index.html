@@ -8,20 +8,24 @@
 </head>
 <body>
     <header class="navbar">
-        <h2>LinkUp</h2>
-        <button id="toggleTheme">🌙</button>
-        <a href="login.html" class="login-btn">Login</a>
+        <h2 class="logo">LinkUp</h2>
+        <div class="nav-right">
+            <button id="toggleTheme" title="Toggle theme">🌙</button>
+            <a href="login.html" class="login-btn">Login</a>
+        </div>
     </header>
 
     <section class="intro">
         <div class="introDiv">
             <h3>DISCOVER OPPORTUNITIES</h3>
-            <h1>LinkUp</h1>
-            <p>Find hackathons, internships, and workshops in one place.</p>
-            <a href="signup.html" class="signup-btn">Get Started</a>
+            <h1>LinkUp 🚀</h1>
+            <p>Find hackathons, internships, and tech events — all in one place.</p>
+            <div class="intro-buttons">
+                <a href="signup.html" class="signup-btn">Get Started</a>
+                <a href="login.html" class="login-btn-div">Login</a>
+            </div>
         </div>
     </section>
-
     <section class="features">
         <div class="feature-card">
             <h3>⚡️ Fast Search</h3>
@@ -39,15 +43,21 @@
     <script>
         const savedTheme = localStorage.getItem("theme");
         if(savedTheme === "true"){
-            document.body.classList.add("light-mode")
+            document.body.classList.add("dark");
         }
         const toggleBtn = document.getElementById("toggleTheme");
         if(toggleBtn){
-            toggleBtn.addEventListener("click",()=>{
-                document.body.classList.toggle("light-mode");
-                const isLight = document.body.classList.contains("light-mode");
-                localStorage.setItem("theme", isLight)
-            })
+            toggleBtn.addEventListener("click", () => {
+                document.body.classList.toggle("dark");
+                const isDark = document.body.classList.contains("dark");
+                localStorage.setItem("theme", isDark);
+                toggleBtn.textContent = isDark ? "☀️" : "🌙";
+            });
+            toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+        }
+        const currentUser = localStorage.getItem("currentUser");
+        if(currentUser){
+            window.location.href = "dashboard.html";
         }
     </script>
 </body>

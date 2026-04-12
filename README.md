@@ -98,10 +98,11 @@ The goal is to create a **practical and focused discovery tool**, not just a bas
 
 ## 🌐 APIs Used
 
-### 1. Eventbrite API
+### 1. Dev.to API
 
-* Fetches real-time events like hackathons, workshops, and meetups
-* Supports location and keyword-based search
+* Fetches tech articles (used as events/hackathons)
+* No authentication required
+* Provides title, author, date, and URL
 
 ---
 
@@ -146,10 +147,19 @@ These requirements align with the project milestones and evaluation criteria.
 LinkUp/
 │
 ├── index.html
-├── style.css
-├── script.js
-├── /assets
-├── /components
+├── dashboard.html
+├── login.html
+├── signup.html
+├── saved.html
+│
+├── css/
+│ └── style.css
+│
+├── js/
+│ ├── app.js
+│ ├── auth.js
+│ └── saved.js
+│
 └── README.md
 ```
 

@@ -3,22 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saved Jobs - LinkUp</title>
+    <title>Saved - LinkUp</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
 <header class="navbar">
-    <h2>Saved Jobs</h2>
+    <h2 class="logo">LinkUp</h2>
     <div class="nav-right">
-        <button onclick="window.location.href='dashboard.html'" class="signup-btn">
-            Back
-        </button>
+        <button id="toggleTheme">🌙</button>
+        <button onclick="window.location.href='dashboard.html'" class="signup-btn">Back</button>
     </div>
 </header>
-
+<section class="search-box">
+    <input type="text" id="searchInput" placeholder="Search saved items...">
+</section>
+<section class="filters">
+    <select id="filterType">
+        <option value="all">All</option>
+        <option value="job">Internships</option>
+        <option value="event">Articles</option>
+    </select>
+</section>
 <section id="results"></section>
-
 <script src="js/saved.js"></script>
+<script>
+    const savedTheme = localStorage.getItem("theme");
+    if(savedTheme === "true"){
+        document.body.classList.add("dark");
+    }
+    const toggleBtn = document.getElementById("toggleTheme");
+    if(toggleBtn){
+        toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+            const isDark = document.body.classList.contains("dark");
+            localStorage.setItem("theme", isDark);
+            toggleBtn.textContent = isDark ? "☀️" : "🌙";
+        });
+    }
+</script>
 </body>
 </html>
