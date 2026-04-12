@@ -170,6 +170,9 @@ LinkUp/
 ### 🔹 Live Demo
 
 You can access the deployed version of the application here:
+```
+https://linkup-platform.netlify.app
+```
 
 ---
 
